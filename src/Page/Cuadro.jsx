@@ -7,7 +7,6 @@ function Cuadro() {
     return (
         <>
             <h1 className="text-6xl text-center font-bold text-teal-500">Cuadro de medicamentos</h1>
-
             <table class="table-auto w-full">
                 <thead>
                     <tr>
@@ -21,7 +20,7 @@ function Cuadro() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="border px-4 py-2">Mornning</td>
+                        <td className="border px-4 py-2" rowspan="4">Mornning</td>
                         <td className="border px-4 py-2 bg-red-400"></td>
                         <td className="border px-4 py-2 bg-red-400"></td>
                         <td className="border px-4 py-2 bg-red-400"></td>
@@ -29,7 +28,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-red-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                        
                         <td className="border px-4 py-2 bg-red-400"></td>
                         <td className="border px-4 py-2 bg-red-400"></td>
                         <td className="border px-4 py-2 bg-red-400"></td>
@@ -37,7 +36,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-red-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                        
                         <td className="border px-4 py-2 bg-red-400"></td>
                         <td className="border px-4 py-2 bg-red-400"></td>
                         <td className="border px-4 py-2 bg-red-400"></td>
@@ -45,7 +44,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-red-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                        
                         <td className="border px-4 py-2 bg-red-400"></td>
                         <td className="border px-4 py-2 bg-red-400"></td>
                         <td className="border px-4 py-2 bg-red-400"></td>
@@ -53,7 +52,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-red-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2">Noon</td>
+                        <td className="border px-4 py-2" rowspan="4">Noon</td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
@@ -61,7 +60,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-amber-200"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                        
                         <td className="border px-4 py-2 bg-amber-200"></td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
@@ -69,7 +68,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-amber-200"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                    
                         <td className="border px-4 py-2 bg-amber-200"></td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
@@ -77,7 +76,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-amber-200"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                        
                         <td className="border px-4 py-2 bg-amber-200"></td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
                         <td className="border px-4 py-2 bg-amber-200"></td>
@@ -85,7 +84,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-amber-200"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2">Evenning</td>
+                        <td className="border px-4 py-2" rowspan="4">Evenning</td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
@@ -93,7 +92,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-teal-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                        
                         <td className="border px-4 py-2 bg-teal-400"></td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
@@ -101,7 +100,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-teal-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                        
                         <td className="border px-4 py-2 bg-teal-400"></td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
@@ -109,7 +108,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-teal-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
+                        
                         <td className="border px-4 py-2 bg-teal-400"></td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
                         <td className="border px-4 py-2 bg-teal-400"></td>
@@ -117,7 +116,7 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-teal-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2">Nigth</td>
+                        <td className="border px-4 py-2" rowspan="4">Nigth</td>
                         <td className="border px-4 py-2 bg-blue-400"></td>
                         <td className="border px-4 py-2 bg-blue-400"></td>
                         <td className="border px-4 py-2 bg-blue-400"></td>
@@ -125,65 +124,64 @@ function Cuadro() {
                         <td className="border px-4 py-2 bg-blue-400"></td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2">Only when</td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2">i need it</td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                    </tr>
 
-
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                        <td className="border px-4 py-2 bg-blue-400"></td>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2" rowspan="4">Only when..</td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                    </tr>
+                    <tr>
+                        
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                        <td className="border px-4 py-2 bg-green-600"></td>
+                    </tr>
                 </tbody>
             </table>
+
             <br></br>
             <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" className="p-2 bg-indigo-500 rounded-lg text-white hover:bg-indigo-400">Añadir medicamento</button>
 
