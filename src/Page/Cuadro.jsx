@@ -3,187 +3,208 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js"
 
 
-function Cuadro() {
+ function Cuadro() {
     return (
         <>
             <h1 className="text-6xl text-center font-bold text-teal-500">Cuadro de medicamentos</h1>
-
-            <table class="table-auto w-full">
+            <table>
                 <thead>
                     <tr>
                         <th className="px-4 py-2"></th>
-                        <th className="px-4 py-2">Medications</th>
-                        <th className="px-4 py-2">Dosage</th>
-                        <th className="px-4 py-2">Time</th>
-                        <th className="px-4 py-2">Date</th>
-                        <th className="px-4 py-2">Comments</th>
+                        <th className="px-4 py-2 text-center">Medications</th>
+                        <th className="px-4 py-2 text-center">Dosage</th>
+                        <th className="px-4 py-2 text-center">Time</th>
+                        <th className="px-4 py-2 text-center">Date</th>
+                        <th className="px-4 py-2 text-center">Comments</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="border px-4 py-2">Mornning</td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
+                        <td className="border px-4 py-2 h-14 w-25">Mornning</td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            <div className="border px-4 py-2 bg-rose-200"></div>
+                            <div className="border px-4 py-2 bg-rose-300"></div>
+                            
+                        </td>
                     </tr>
+                    
                     <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
+                        <td className="border px-4 py-2 w-25">Noon</td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                            <div className="border px-4 py-2 bg-amber-200"></div>
+                            <div className="border px-4 py-2 bg-amber-100"></div>
+                        </td>
+                        
                     </tr>
+                    
                     <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
+                        <td className="border px-4 py-2 w-25">Evenning</td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                            <div className="border px-4 py-2 bg-teal-400"></div>
+                            <div className="border px-4 py-2 bg-teal-200"></div>
+                        </td>
                     </tr>
+                   
                     <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
-                        <td className="border px-4 py-2 bg-red-400"></td>
+                        <td className="border px-4 py-2 w-25" >Nigth</td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            <div className="border px-4 py-2 bg-blue-400"></div>
+                            <div className="border px-4 py-2 bg-blue-200"></div>
+                            
+                        </td>
+                        
                     </tr>
+                    
                     <tr>
-                        <td className="border px-4 py-2">Noon</td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
+                        <td className="border px-4 py-2 w-25"  >Only when..</td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                        </td>
+                        <td className="h-15 w-25">
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                            <div className="border px-4 py-2 bg-green-300"></div>
+                            <div className="border px-4 py-2 bg-green-200"></div>
+                        </td>
+                        
                     </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                        <td className="border px-4 py-2 bg-amber-200"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2">Evenning</td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                        <td className="border px-4 py-2 bg-teal-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2">Nigth</td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                        <td className="border px-4 py-2 bg-blue-400"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2">Only when</td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2">i need it</td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                    </tr>
-                    <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                        <td className="border px-4 py-2 bg-green-600"></td>
-                    </tr>
-
-
+                    
                 </tbody>
             </table>
+
             <br></br>
             <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" className="p-2 bg-indigo-500 rounded-lg text-white hover:bg-indigo-400">Añadir medicamento</button>
 
