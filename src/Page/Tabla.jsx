@@ -115,16 +115,19 @@ function Tabla() {
                                 <td >
                                     {MedicamentosMorning.map((medicamentos)=>(
                                     <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.hora}</div>
-
                                     ))}
                                 </td>
 
                                 <td >
-                                    <div className="border px-4 py-2 bg-rose-200 h-7"></div>
+                                {MedicamentosMorning.map((medicamentos)=>(
+                                    <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.fecha}</div>
+                                    ))}
                                 </td>
 
                                 <td >
-                                    <tr className="border px-4 py-2 bg-rose-200 h-7"></tr>
+                                {MedicamentosMorning.map((medicamentos)=>(
+                                    <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.comentarios}</div>
+                                    ))}
                                 </td>
                             </tr>
 
@@ -136,16 +139,24 @@ function Tabla() {
                                     ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-amber-200 h-7"></div>
+                                {MedicamentosNoon.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-amber-200 h-7">{medicamento.dosis}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-amber-200 h-7"></div>
+                                {MedicamentosNoon.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-amber-200 h-7">{medicamento.hora}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-amber-200 h-7"></div>
+                                {MedicamentosNoon.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-amber-200 h-7">{medicamento.fecha}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-amber-200 h-7"></div>
+                                {MedicamentosNoon.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-amber-200 h-7">{medicamento.comentarios}</div>
+                                    ))}
                                 </td>
 
 
@@ -157,25 +168,26 @@ function Tabla() {
                                     {MedicamentosEvening.map((medicamento) => (
                                         <div className="border px-4 py-2 bg-teal-400 h-7">{medicamento.medicamento}</div>
                                     ))}
-
-
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-teal-400 h-7"></div>
-
+                                    {MedicamentosEvening.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-teal-400 h-7">{medicamento.dosis}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-teal-400 h-7"></div>
-
-
+                                {MedicamentosEvening.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-teal-400 h-7">{medicamento.hora}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-teal-400 h-7"></div>
-
+                                {MedicamentosEvening.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-teal-400 h-7">{medicamento.fecha}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-teal-400 h-7"></div>
-
+                                {MedicamentosEvening.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-teal-400 h-7">{medicamento.comentarios}</div>
+                                    ))}
                                 </td>
                             </tr>
 
@@ -187,19 +199,24 @@ function Tabla() {
                                     ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-blue-400 h-7"></div>
-
+                                {MedicamentosNigth.map((medicamento) =>(
+                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.dosis}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-blue-400 h-7"></div>
-
+                                {MedicamentosNigth.map((medicamento) =>(
+                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.hora}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-blue-400 h-7"></div>
+                                {MedicamentosNigth.map((medicamento) =>(
+                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.fecha}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-blue-400 h-7"></div>
-
+                                {MedicamentosNigth.map((medicamento) =>(
+                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.comentarios}</div>
+                                    ))}
                                 </td>
 
                             </tr>
@@ -211,16 +228,24 @@ function Tabla() {
                                     <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.medicamento}</div>
                                     ))}                                </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-green-300 h-7"></div>
+                                {MedicamentosOnlyWhen.map((medicamento)=>(
+                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.dosis}</div>
+                                    ))}  
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-green-300 h-7"></div>
+                                {MedicamentosOnlyWhen.map((medicamento)=>(
+                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.hora}</div>
+                                    ))}  
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-green-300 h-7"></div>
+                                {MedicamentosOnlyWhen.map((medicamento)=>(
+                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.fecha}</div>
+                                    ))}  
                                 </td>
                                 <td>
-                                    <div className="border px-4 py-2 bg-green-300 h-7"></div>
+                                {MedicamentosOnlyWhen.map((medicamento)=>(
+                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.comentarios}</div>
+                                    ))}  
                                 </td>
 
 
