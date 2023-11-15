@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js"
-import { useActionData } from 'react-router-dom';
+import { useActionData, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 
@@ -12,6 +12,20 @@ function Tabla() {
     const [MedicamentosEvening, setMedicamentosEvening] = useState([])
     const [MedicamentosNigth, setMedicamentosNigth] = useState([])
     const [MedicamentosOnlyWhen, setMedicamentosOnlyWhen] = useState([])
+    const [dosis, setDosis] = useState([])
+    const [horario, setHorario] = useState([])
+    const [values, setValues] = useState({
+        dosis: '',
+        medida: ''
+    })
+
+    const [datos, setDatos] = useState({
+        medicamento: '',
+        dosis: '',
+        hora: '',
+        fecha: '',
+        horario: ''
+    })
     useEffect(() => {
         axios.get("http://localhost:3001/obtenerMedicamentosMorning")
             .then(respuesta => {
@@ -60,6 +74,22 @@ function Tabla() {
 
     }, [])
 
+    useEffect(() => {
+        axios.get("http://localhost:3001/obtenerDosis")
+            .then(respuesta => {
+                setDosis(respuesta.data.dosis)
+            })
+            .catch(error => console.log(error))
+    }, [])
+
+    useEffect(() => {
+        axios.get("http://localhost:3001/obtenerHorario")
+            .then(respuesta => {
+                setHorario(respuesta.data.horario)
+            })
+            .catch(error => console.log(error))
+    })
+
     const handleLogout = () => {
         axios.get('http://localhost:3001/logout')
             .then(res => {
@@ -70,15 +100,34 @@ function Tabla() {
                 }
             }).catch(err => console.log(err))
     }
+    const navigate = useNavigate()
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        axios.post('http://localhost:3001/crearDosis', values)
+        .then(res =>{
+            console.log(res)
+            navigate('/Tabla')
+        })
+        .catch(err => console.log(err))
+    }
 
-    console.log(MedicamentosMorning)
+    const agregarMedicamento = (e) =>{
+        e.preventDefault()
+        axios.post('http://localhost:3001/crearMedicamento', datos)
+        .then(res =>{
+            console.log(res)
+            navigate('/Tabla')
+        })
+        .catch(err => console.log(err))
+    }
 
     return (
         <>
 
             <h1 className="text-8xl text-center font-bold text-teal-500">CUADRO DE <br></br>
                 MEDICAMENTOS</h1>
-            <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" className="p-2 bg-indigo-500 rounded-lg text-white hover:bg-indigo-400">Añadir medicamento</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" className=" left-[5%] absolute p-2 bg-indigo-500 rounded-lg text-white hover:bg-indigo-400">Añadir medicamento</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal2" type="button" className="left-[20%] absolute bg-green-400 p-2 text-white border rounded-lg hover:bg-green-300">Añadir dosis</button>
             <button onClick={handleLogout} className="right-[10%] absolute bg-red-500 text-white p-2 rounded-lg hover:bg-red-400">Cerrar sesion</button>
 
             <div className="flex justify-center h-screen items-center">
@@ -93,7 +142,7 @@ function Tabla() {
                             <th className="w-1/6 text-center">Dosage</th>
                             <th className="w-1/6 text-center">Time</th>
                             <th className="w-1/6 text-center">Date</th>
-                            <th className="w-1/6 text-center">Comments</th>
+                            <th className="w-1/6 text-center">Check</th>
 
                         </tr>
 
@@ -107,30 +156,31 @@ function Tabla() {
                                         <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.medicamento}</div>))}
                                 </td>
                                 <td >
-                                    {MedicamentosMorning.map((medicamentos)=>(
-                                    <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.dosis}</div>
+                                    {MedicamentosMorning.map((medicamentos) => (
+                                        <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.dosis}</div>
                                     ))}
                                 </td>
 
                                 <td >
-                                    {MedicamentosMorning.map((medicamentos)=>(
-                                    <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.hora}</div>
+                                    {MedicamentosMorning.map((medicamentos) => (
+                                        <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.hora}</div>
                                     ))}
                                 </td>
 
                                 <td >
-                                {MedicamentosMorning.map((medicamentos)=>(
-                                    <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.fecha}</div>
+                                    {MedicamentosMorning.map((medicamentos) => (
+                                        <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.fecha}</div>
                                     ))}
                                 </td>
 
                                 <td >
-                                {MedicamentosMorning.map((medicamentos)=>(
-                                    <div className="border px-4 py-2 bg-rose-200 h-7">{medicamentos.comentarios}</div>
+                                    {MedicamentosMorning.map((medicamentos) => (
+                                        <div className="border px-4 py-2 bg-rose-200 h-7">
+                                            <button className="font-bold">Check</button>
+                                        </div>
                                     ))}
                                 </td>
                             </tr>
-
                             <tr>
                                 <td>Noon</td>
                                 <td>
@@ -139,29 +189,28 @@ function Tabla() {
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosNoon.map((medicamento) => (
+                                    {MedicamentosNoon.map((medicamento) => (
                                         <div className="border px-4 py-2 bg-amber-200 h-7">{medicamento.dosis}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosNoon.map((medicamento) => (
+                                    {MedicamentosNoon.map((medicamento) => (
                                         <div className="border px-4 py-2 bg-amber-200 h-7">{medicamento.hora}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosNoon.map((medicamento) => (
+                                    {MedicamentosNoon.map((medicamento) => (
                                         <div className="border px-4 py-2 bg-amber-200 h-7">{medicamento.fecha}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosNoon.map((medicamento) => (
-                                        <div className="border px-4 py-2 bg-amber-200 h-7">{medicamento.comentarios}</div>
+                                    {MedicamentosNoon.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-amber-200 h-7">
+                                            <button className="font-bold">Check</button>
+                                        </div>
                                     ))}
                                 </td>
-
-
                             </tr>
-
                             <tr>
                                 <td >Evenning</td>
                                 <td>
@@ -175,18 +224,20 @@ function Tabla() {
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosEvening.map((medicamento) => (
+                                    {MedicamentosEvening.map((medicamento) => (
                                         <div className="border px-4 py-2 bg-teal-400 h-7">{medicamento.hora}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosEvening.map((medicamento) => (
+                                    {MedicamentosEvening.map((medicamento) => (
                                         <div className="border px-4 py-2 bg-teal-400 h-7">{medicamento.fecha}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosEvening.map((medicamento) => (
-                                        <div className="border px-4 py-2 bg-teal-400 h-7">{medicamento.comentarios}</div>
+                                    {MedicamentosEvening.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-teal-400 h-7">
+                                            <button className="font-bold">Check</button>
+                                        </div>
                                     ))}
                                 </td>
                             </tr>
@@ -194,77 +245,67 @@ function Tabla() {
                             <tr>
                                 <td  >Nigth</td>
                                 <td>
-                                    {MedicamentosNigth.map((medicamento) =>(
-                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.medicamento}</div>
+                                    {MedicamentosNigth.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.medicamento}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosNigth.map((medicamento) =>(
-                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.dosis}</div>
+                                    {MedicamentosNigth.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.dosis}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosNigth.map((medicamento) =>(
-                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.hora}</div>
+                                    {MedicamentosNigth.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.hora}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosNigth.map((medicamento) =>(
-                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.fecha}</div>
+                                    {MedicamentosNigth.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.fecha}</div>
                                     ))}
                                 </td>
                                 <td>
-                                {MedicamentosNigth.map((medicamento) =>(
-                                    <div className="border px-4 py-2 bg-blue-400 h-7">{medicamento.comentarios}</div>
+                                    {MedicamentosNigth.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-blue-400 h-7">
+                                            <button className="font-bold">Check</button>
+                                        </div>
                                     ))}
                                 </td>
-
                             </tr>
-
                             <tr>
                                 <td >Only when..</td>
                                 <td>
-                                    {MedicamentosOnlyWhen.map((medicamento)=>(
-                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.medicamento}</div>
+                                    {MedicamentosOnlyWhen.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.medicamento}</div>
                                     ))}                                </td>
                                 <td>
-                                {MedicamentosOnlyWhen.map((medicamento)=>(
-                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.dosis}</div>
-                                    ))}  
+                                    {MedicamentosOnlyWhen.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.dosis}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                {MedicamentosOnlyWhen.map((medicamento)=>(
-                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.hora}</div>
-                                    ))}  
+                                    {MedicamentosOnlyWhen.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.hora}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                {MedicamentosOnlyWhen.map((medicamento)=>(
-                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.fecha}</div>
-                                    ))}  
+                                    {MedicamentosOnlyWhen.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.fecha}</div>
+                                    ))}
                                 </td>
                                 <td>
-                                {MedicamentosOnlyWhen.map((medicamento)=>(
-                                    <div className="border px-4 py-2 bg-green-300 h-7">{medicamento.comentarios}</div>
-                                    ))}  
+                                    {MedicamentosOnlyWhen.map((medicamento) => (
+                                        <div className="border px-4 py-2 bg-green-300 h-7">
+                                            <button className="font-bold">Check</button>
+                                        </div>
+                                    ))}
                                 </td>
-
-
                             </tr>
-
-
                         </tbody>
-
-
-
                     </table>
-
                 </div>
             </div>
-
             <br></br>
-
-
-
             <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
@@ -275,61 +316,59 @@ function Tabla() {
                         <div className="modal-body">
                             <form>
                                 <p className="p-2 font-semibold">Medications</p>
-                                <input className="border rounded-lg w-[95%] p-2"></input>
+                                <input onChange={e => setDatos({...datos, medicamento: e.target.value})} className="border rounded-lg w-[95%] p-2"></input>
 
-                                <p className="p-2 font-semibold">Dosage</p>
-                                <input className="border rounded-lg w-[95%] p-2"></input>
-
-                                <select className="p-2 border rounded-lg w-[95%] bg-white">
-                                    <option>ml</option>
-                                    <option>gr</option>
-
+                                <p className="p-2 font-semibold">Dosis</p>
+                                <select onChange={e => setDatos({...datos, dosis: e.target.value})} className="p-2 border rounded-lg w-[95%] bg-white">
+                                    {dosis.map((dosisMedicina) => (
+                                        <option>{dosisMedicina.dosis}  {dosisMedicina.medida}</option>
+                                    ))}
                                 </select>
 
-                                <p className="p-2 font-semibold">Time</p>
-                                <input className="border rounded-lg w-[95%] p-2"></input>
+                                <p className="p-2 font-semibold">Hora</p>
+                                <input onChange={e => setDatos({...datos, hora: e.target.value})} className="border rounded-lg w-[95%] p-2"></input>
 
-                                <p className="p-2 font-semibold">Date</p>
-                                <input className="border rounded-lg w-[95%] p-2"></input>
+                                <p className="p-2 font-semibold">Fecha</p>
+                                <input onChange={e => setDatos({...datos, fecha: e.target.value})} className="border rounded-lg w-[95%] p-2"></input>
 
-                                <p className="p-2 font-semibold">Comments (opcional)</p>
-                                <input className="border rounded-lg w-[95%] p-2"></input>
                                 <p className="p-2 font-semibold">Seleccione su hora</p>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                    <label className="form-check-label" for="flexCheckDefault">
-                                        Morning
-                                    </label>
-                                </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                    <label className="form-check-label" for="flexCheckDefault">
-                                        Noon
-                                    </label>
-                                </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                    <label className="form-check-label" for="flexCheckDefault">
-                                        Evening
-                                    </label>
-                                </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                    <label className="form-check-label" for="flexCheckDefault">
-                                        Nigth
-                                    </label>
-                                </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                    <label className="form-check-label" for="flexCheckDefault">
-                                        Only when I need it
-                                    </label>
-                                </div>
+                                <select onChange={e => setDatos({...datos, horario: e.target.value})} className="p-2 border rounded-lg w-[95%] bg-white">
+                                    {horario.map((horarioMedicina) => (
+                                        <option>{horarioMedicina.horario}</option>
+                                    ))}
+                                </select>
+
+
+
 
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button className="bg-green-500 hover:bg-green-400 p-2 text-white rounded-lg">Agregar</button>
+                            <button onClick={agregarMedicamento} className="bg-green-500 hover:bg-green-400 p-2 text-white rounded-lg">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Agrega tus dosis</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <p className="p-2 font-semibold">Añadir una dosis</p>
+                                <input onChange={e => setValues({...values, dosis: e.target.value})} type="text" className="border rounded-lg p-2"></input>
+
+                                <p className="font-semibold p-2">Agrega el tipo de medida</p>
+                                <input placeholder='ML/GR' onChange={e => setValues({...values, medida: e.target.value})} className="border rounded-lg p-2">
+                                </input>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-bs-dismiss="modal" onClick={handleSubmit} className="bg-green-400 p-2 text-white border rounded-lg hover:bg-green-300">Agregar</button>
                         </div>
                     </div>
                 </div>
