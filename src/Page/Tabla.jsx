@@ -22,8 +22,8 @@ function Tabla() {
     const [datos, setDatos] = useState({
         medicamento: '',
         dosis: '',
-        hora: '',
-        fecha: '',
+        hora: '', 
+        fecha: '', 
         horario: ''
     })
     useEffect(() => {
@@ -121,6 +121,7 @@ function Tabla() {
         .catch(err => console.log(err))
     }
 
+
     return (
         <>
 
@@ -128,7 +129,7 @@ function Tabla() {
                 MEDICAMENTOS</h1>
             <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" className=" left-[5%] absolute p-2 bg-indigo-500 rounded-lg text-white hover:bg-indigo-400">Añadir medicamento</button>
             <button data-bs-toggle="modal" data-bs-target="#exampleModal2" type="button" className="left-[20%] absolute bg-green-400 p-2 text-white border rounded-lg hover:bg-green-300">Añadir dosis</button>
-            <button onClick={handleLogout} className="right-[10%] absolute bg-red-500 text-white p-2 rounded-lg hover:bg-red-400">Cerrar sesion</button>
+            <button onClick={handleLogout} className="right-[10%] absolute bg-red-500 text-white p-2 rounded-lg hover:bg-red-400">Cerrar sesion (No funciona)</button>
 
             <div className="flex justify-center h-screen items-center">
                 <div className="w-3/4 rounded-md shadow-2xl bg-white flex justify-center px-10 pb-10 pt-5">
@@ -321,7 +322,7 @@ function Tabla() {
                                 <p className="p-2 font-semibold">Dosis</p>
                                 <select onChange={e => setDatos({...datos, dosis: e.target.value})} className="p-2 border rounded-lg w-[95%] bg-white">
                                     {dosis.map((dosisMedicina) => (
-                                        <option>{dosisMedicina.dosis}  {dosisMedicina.medida}</option>
+                                        <option  key={dosisMedicina.dosis_id} value={dosisMedicina.dosis_id} >{dosisMedicina.dosis}  {dosisMedicina.medida}</option>
                                     ))}
                                 </select>
 
@@ -334,17 +335,13 @@ function Tabla() {
                                 <p className="p-2 font-semibold">Seleccione su hora</p>
                                 <select onChange={e => setDatos({...datos, horario: e.target.value})} className="p-2 border rounded-lg w-[95%] bg-white">
                                     {horario.map((horarioMedicina) => (
-                                        <option>{horarioMedicina.horario}</option>
+                                        <option key={horarioMedicina.id_horario} value={horarioMedicina.id_horario}>{horarioMedicina.horario}</option>
                                     ))}
                                 </select>
-
-
-
-
+                            <button onClick={agregarMedicamento} className="bg-green-500 hover:bg-green-400 p-2 text-white rounded-lg">Agregar</button>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button onClick={agregarMedicamento} className="bg-green-500 hover:bg-green-400 p-2 text-white rounded-lg">Agregar</button>
+                        <div class="modal-footer">                           
                         </div>
                     </div>
                 </div>
