@@ -1,0 +1,2 @@
+Varias funciones no sirven y tampoco se supo como hacer el check de horas debido
+a una falta de conocimientos, pero se hizo el esfuerzo para tener algo

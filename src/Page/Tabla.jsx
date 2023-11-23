@@ -127,7 +127,7 @@ function Tabla() {
 
             <h1 className="text-8xl text-center font-bold text-teal-500">CUADRO DE <br></br>
                 MEDICAMENTOS</h1>
-            <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" className=" left-[5%] absolute p-2 bg-indigo-500 rounded-lg text-white hover:bg-indigo-400">Añadir medicamento</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" className=" left-[5%] absolute p-2 bg-indigo-500 rounded-lg text-white hover:bg-indigo-400">Añadir Medicina (no sirve)</button>
             <button data-bs-toggle="modal" data-bs-target="#exampleModal2" type="button" className="left-[20%] absolute bg-green-400 p-2 text-white border rounded-lg hover:bg-green-300">Añadir dosis</button>
             <button onClick={handleLogout} className="right-[10%] absolute bg-red-500 text-white p-2 rounded-lg hover:bg-red-400">Cerrar sesion (No funciona)</button>
 
